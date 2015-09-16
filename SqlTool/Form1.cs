@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace SqlTool
 {
-    public partial class Form1 : Form
+    public partial class SqlTool : Form
     {
-        public Form1()
+        public SqlTool()
         {
             InitializeComponent();
+        }
+
+        private void SqlTool_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
