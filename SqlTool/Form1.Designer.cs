@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SqlTool));
             this.labelServer = new System.Windows.Forms.Label();
-            this.texServer = new System.Windows.Forms.TextBox();
+            this.textServer = new System.Windows.Forms.TextBox();
             this.labelUser = new System.Windows.Forms.Label();
             this.textUser = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
@@ -38,23 +38,23 @@
             this.labelDataBase = new System.Windows.Forms.Label();
             this.comDataBase = new System.Windows.Forms.ComboBox();
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.panelRight = new System.Windows.Forms.Panel();
-            this.buttonConnection = new System.Windows.Forms.Button();
-            this.textFind = new System.Windows.Forms.TextBox();
-            this.btnFind = new System.Windows.Forms.Button();
             this.dataGridFind = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnSaveDescription = new System.Windows.Forms.Button();
+            this.btnFind = new System.Windows.Forms.Button();
+            this.textFind = new System.Windows.Forms.TextBox();
+            this.panelRight = new System.Windows.Forms.Panel();
             this.tabDaoShu = new System.Windows.Forms.TabControl();
             this.tabData = new System.Windows.Forms.TabPage();
             this.tabCode = new System.Windows.Forms.TabPage();
             this.tabSql = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnSaveDescription = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonConnection = new System.Windows.Forms.Button();
             this.panelLeft.SuspendLayout();
-            this.panelRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFind)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panelRight.SuspendLayout();
             this.tabDaoShu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelServer
@@ -68,14 +68,15 @@
             this.labelServer.TabIndex = 0;
             this.labelServer.Text = "Server";
             // 
-            // texServer
+            // textServer
             // 
-            this.texServer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textServer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.texServer.Location = new System.Drawing.Point(75, 10);
-            this.texServer.Name = "texServer";
-            this.texServer.Size = new System.Drawing.Size(137, 21);
-            this.texServer.TabIndex = 1;
+            this.textServer.Location = new System.Drawing.Point(75, 10);
+            this.textServer.Name = "textServer";
+            this.textServer.Size = new System.Drawing.Size(137, 21);
+            this.textServer.TabIndex = 1;
+            this.textServer.Leave += new System.EventHandler(this.texServer_Leave);
             // 
             // labelUser
             // 
@@ -139,31 +140,14 @@
             this.panelLeft.Size = new System.Drawing.Size(284, 392);
             this.panelLeft.TabIndex = 8;
             // 
-            // panelRight
+            // dataGridFind
             // 
-            this.panelRight.Controls.Add(this.tabDaoShu);
-            this.panelRight.Controls.Add(this.btnSaveDescription);
-            this.panelRight.Controls.Add(this.dataGridView1);
-            this.panelRight.Location = new System.Drawing.Point(302, 37);
-            this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(588, 392);
-            this.panelRight.TabIndex = 9;
-            // 
-            // buttonConnection
-            // 
-            this.buttonConnection.Location = new System.Drawing.Point(775, 7);
-            this.buttonConnection.Name = "buttonConnection";
-            this.buttonConnection.Size = new System.Drawing.Size(115, 23);
-            this.buttonConnection.TabIndex = 10;
-            this.buttonConnection.Text = "Connection";
-            this.buttonConnection.UseVisualStyleBackColor = true;
-            // 
-            // textFind
-            // 
-            this.textFind.Location = new System.Drawing.Point(18, 4);
-            this.textFind.Name = "textFind";
-            this.textFind.Size = new System.Drawing.Size(182, 21);
-            this.textFind.TabIndex = 0;
+            this.dataGridFind.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridFind.Location = new System.Drawing.Point(18, 33);
+            this.dataGridFind.Name = "dataGridFind";
+            this.dataGridFind.RowTemplate.Height = 23;
+            this.dataGridFind.Size = new System.Drawing.Size(252, 345);
+            this.dataGridFind.TabIndex = 2;
             // 
             // btnFind
             // 
@@ -174,32 +158,22 @@
             this.btnFind.Text = "查找";
             this.btnFind.UseVisualStyleBackColor = true;
             // 
-            // dataGridFind
+            // textFind
             // 
-            this.dataGridFind.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridFind.Location = new System.Drawing.Point(18, 33);
-            this.dataGridFind.Name = "dataGridFind";
-            this.dataGridFind.RowTemplate.Height = 23;
-            this.dataGridFind.Size = new System.Drawing.Size(252, 345);
-            this.dataGridFind.TabIndex = 2;
+            this.textFind.Location = new System.Drawing.Point(18, 4);
+            this.textFind.Name = "textFind";
+            this.textFind.Size = new System.Drawing.Size(182, 21);
+            this.textFind.TabIndex = 0;
             // 
-            // dataGridView1
+            // panelRight
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(559, 139);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // btnSaveDescription
-            // 
-            this.btnSaveDescription.Location = new System.Drawing.Point(456, 149);
-            this.btnSaveDescription.Name = "btnSaveDescription";
-            this.btnSaveDescription.Size = new System.Drawing.Size(118, 23);
-            this.btnSaveDescription.TabIndex = 1;
-            this.btnSaveDescription.Text = "Save Description";
-            this.btnSaveDescription.UseVisualStyleBackColor = true;
+            this.panelRight.Controls.Add(this.tabDaoShu);
+            this.panelRight.Controls.Add(this.btnSaveDescription);
+            this.panelRight.Controls.Add(this.dataGridView1);
+            this.panelRight.Location = new System.Drawing.Point(302, 37);
+            this.panelRight.Name = "panelRight";
+            this.panelRight.Size = new System.Drawing.Size(588, 392);
+            this.panelRight.TabIndex = 9;
             // 
             // tabDaoShu
             // 
@@ -253,6 +227,33 @@
             this.tabPage4.Text = "导数";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // btnSaveDescription
+            // 
+            this.btnSaveDescription.Location = new System.Drawing.Point(456, 149);
+            this.btnSaveDescription.Name = "btnSaveDescription";
+            this.btnSaveDescription.Size = new System.Drawing.Size(118, 23);
+            this.btnSaveDescription.TabIndex = 1;
+            this.btnSaveDescription.Text = "Save Description";
+            this.btnSaveDescription.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(15, 4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(559, 139);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // buttonConnection
+            // 
+            this.buttonConnection.Location = new System.Drawing.Point(775, 7);
+            this.buttonConnection.Name = "buttonConnection";
+            this.buttonConnection.Size = new System.Drawing.Size(115, 23);
+            this.buttonConnection.TabIndex = 10;
+            this.buttonConnection.Text = "Connection";
+            this.buttonConnection.UseVisualStyleBackColor = true;
+            // 
             // SqlTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -268,7 +269,7 @@
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.textUser);
             this.Controls.Add(this.labelUser);
-            this.Controls.Add(this.texServer);
+            this.Controls.Add(this.textServer);
             this.Controls.Add(this.labelServer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SqlTool";
@@ -276,10 +277,10 @@
             this.Load += new System.EventHandler(this.SqlTool_Load);
             this.panelLeft.ResumeLayout(false);
             this.panelLeft.PerformLayout();
-            this.panelRight.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridFind)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panelRight.ResumeLayout(false);
             this.tabDaoShu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,7 +289,7 @@
         #endregion
 
         private System.Windows.Forms.Label labelServer;
-        private System.Windows.Forms.TextBox texServer;
+        private System.Windows.Forms.TextBox textServer;
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.TextBox textUser;
         private System.Windows.Forms.Label labelPassword;
